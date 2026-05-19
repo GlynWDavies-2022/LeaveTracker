@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="LeaveTracker.API.Tests/LeaveTracker.API.Tests.csproj" Id="430cdab1-37a7-41c1-beff-57b1324151ab" />
+  <Project Path="LeaveTracker.API/LeaveTracker.API.csproj" Id="05431ed8-0b76-46ff-948d-3361d055ed74" />
+  <Project Path="LeaveTracker.Application.Tests/LeaveTracker.Application.Tests.csproj" Id="078f0d90-dbda-4ebf-8f46-25119a303da7" />
+  <Project Path="LeaveTracker.Application/LeaveTracker.Application.csproj" Id="5e767703-9b90-41f3-9ea4-4447aaccea2b" />
+  <Project Path="LeaveTracker.Domain.Tests/LeaveTracker.Domain.Tests.csproj" Id="7b5b5380-b257-4b19-aeed-4248ebe86317" />
+  <Project Path="LeaveTracker.Domain/LeaveTracker.Domain.csproj" Id="38dcd472-f187-47cf-968a-1c849c2d1f4a" />
+  <Project Path="LeaveTracker.Infrastructure.Tests/LeaveTracker.Infrastructure.Tests.csproj" Id="ba8dd6ad-d901-4361-aa44-4b7a10fa7cdd" />
+  <Project Path="LeaveTracker.Infrastructure/LeaveTracker.Infrastructure.csproj" Id="a88aa955-98ea-47ec-af81-70d3c430dab2" />
+</Solution>
