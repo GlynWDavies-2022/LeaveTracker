@@ -8,7 +8,10 @@
 
   <ItemGroup>
     <Folder Include="DTO\" />
-    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LeaveTracker.Domain\LeaveTracker.Domain.csproj" />
   </ItemGroup>
 
 </Project>
