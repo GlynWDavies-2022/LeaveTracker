@@ -15,12 +15,19 @@ public class GenericRepository<T>(LeaveTrackerContext context) : IGenericReposit
     {
         return await context.Set<T>().FindAsync(id);
     }
+    public async Task<T?> GetEntityWithSpecification(ISpecification<T> specification)
+    {
+        return await ApplySpecification(specification).FirstOrDefaultAsync();
+    }
 
     public async Task<IReadOnlyList<T>> ListAllAsync()
     {
         return await context.Set<T>().ToListAsync();
     }
-
+    public Task<IReadOnlyList<T>> ListAsync(ISpecification<T> specification)
+    {
+        throw new NotImplementedException();
+    }
 
     public void Update(T entity)
     {
@@ -43,4 +50,10 @@ public class GenericRepository<T>(LeaveTrackerContext context) : IGenericReposit
     {
         return context.Set<T>().Any(entity => entity.Id == id);
     }
+
+    private IQueryable<T> ApplySpecification(ISpecification<T> specification)
+    {
+        return SpecificationEvaluator<T>.GetQuery(context.Set<T>().AsQueryable(), specification);
+    }
+
 }
