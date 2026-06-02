@@ -3,4 +3,5 @@
 public class JobTitle : BaseEntity
 {
     public required string Description { get; set; }
+    public ICollection<Employee> Employees { get; set; } = [];
 }

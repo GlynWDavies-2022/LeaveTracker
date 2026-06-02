@@ -9,4 +9,8 @@ public class WorkDay : BaseEntity
     public TimeSpan StartTime { get; set; }
 
     public TimeSpan EndTime { get; set; }
+
+    public int WorkPatternId { get; set; }
+
+    public WorkPattern? WorkPattern { get; set; }
 }
