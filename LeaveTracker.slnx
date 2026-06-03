@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
   <Project Path="LeaveTracker.API.Tests/LeaveTracker.API.Tests.csproj" Id="430cdab1-37a7-41c1-beff-57b1324151ab" />
   <Project Path="LeaveTracker.API/LeaveTracker.API.csproj" Id="05431ed8-0b76-46ff-948d-3361d055ed74" />
   <Project Path="LeaveTracker.Application.Tests/LeaveTracker.Application.Tests.csproj" Id="078f0d90-dbda-4ebf-8f46-25119a303da7" />
