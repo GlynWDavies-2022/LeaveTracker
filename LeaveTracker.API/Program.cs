@@ -26,6 +26,8 @@ builder.Services.AddDbContext<LeaveTrackerSQLDBContext>(options =>
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
+builder.Services.AddScoped<IBankHolidayRepository, BankHolidayRepository>();
+
 var app = builder.Build();
 
 // ------------------------------------------------------------------------------------------------
