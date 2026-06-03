@@ -1,14 +1,31 @@
+// ------------------------------------------------------------------------------------------------
+// Application Entry Point
+// ------------------------------------------------------------------------------------------------
+
+using LeaveTracker.Infrastructure.Database;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// ------------------------------------------------------------------------------------------------
+// Service Container
+// ------------------------------------------------------------------------------------------------
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
 builder.Services.AddOpenApi();
+
+builder.Services.AddDbContext<LeaveTrackerSQLDBContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LeaveTrackerSQLDBConnection"));
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// ------------------------------------------------------------------------------------------------
+// HTTP Request Pipeline
+// ------------------------------------------------------------------------------------------------
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -21,3 +38,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// ------------------------------------------------------------------------------------------------

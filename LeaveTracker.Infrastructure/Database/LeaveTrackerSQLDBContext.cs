@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LeaveTracker.Infrastructure.Database;
 
-public class LeaveTrackerContext(DbContextOptions options) : DbContext(options)
+public class LeaveTrackerSQLDBContext(DbContextOptions options) : DbContext(options)
 {
     public required DbSet<BankHoliday> BankHolidays { get; set; }
     public required DbSet<Company> Companies { get; set; }
@@ -31,6 +31,6 @@ public class LeaveTrackerContext(DbContextOptions options) : DbContext(options)
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(LeaveTrackerContext).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(LeaveTrackerSQLDBContext).Assembly);
     }
 }
