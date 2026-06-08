@@ -5,14 +5,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LeaveTracker.Infrastructure.Persistence;
 
-public class BankHolidayRepository : Repository<BankHoliday>, IBankHolidayRepository
+public class BankHolidayRepository : IBankHolidayRepository
 {
-    public BankHolidayRepository(LeaveTrackerSQLDBContext context) : base(context)
-    { }
+    private readonly LeaveTrackerSQLDBContext _dbContext;
+
+    public BankHolidayRepository(LeaveTrackerSQLDBContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
 
     public async Task<IEnumerable<BankHoliday>> GetAllByYearAsync(int year)
     {
-        return await _dbSet
+        return await _dbContext.BankHolidays
             .Where(bh => bh.Date.Year == year)
             .ToListAsync();
     }

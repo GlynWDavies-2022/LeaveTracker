@@ -2,7 +2,7 @@
 
 namespace LeaveTracker.Application.Interfaces;
 
-public interface IBankHolidayRepository : IRepository<BankHoliday>
+public interface IBankHolidayRepository
 {
     public Task<IEnumerable<BankHoliday>> GetAllByYearAsync(int year);
 }
