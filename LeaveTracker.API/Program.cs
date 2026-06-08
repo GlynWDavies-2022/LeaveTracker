@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------------------------
 
 using LeaveTracker.Application.Interfaces;
+using LeaveTracker.Application.Services;
 using LeaveTracker.Infrastructure.Database;
 using LeaveTracker.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,8 @@ builder.Services.AddDbContext<LeaveTrackerSQLDBContext>(options =>
 });
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 
 builder.Services.AddScoped<IBankHolidayRepository, BankHolidayRepository>();
 
