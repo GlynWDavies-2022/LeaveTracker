@@ -12,6 +12,11 @@ public class BankHolidayService : IBankHolidayService
         _bankHolidayRepository = bankHolidayRepository;
     }
 
+    public async Task<IEnumerable<BankHoliday>> GetAllAsync()
+    {
+        return await _bankHolidayRepository.GetAllAsync();
+    }
+
     public async Task<IEnumerable<BankHoliday>> GetAllByYearAsync(int year)
     {
         return await _bankHolidayRepository.GetAllByYearAsync(year);
