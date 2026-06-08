@@ -8,16 +8,18 @@ namespace LeaveTracker.API.Controllers;
 [ApiController]
 public class BankHolidaysController : ControllerBase
 {
-    private readonly IRepository<BankHoliday> _bankHolidayRepository;
+    private readonly IBankHolidayService _bankHolidayService;
 
-    public BankHolidaysController(IRepository<BankHoliday> bankHolidayRepository)
+    public BankHolidaysController(IBankHolidayService bankHolidayService)
     {
-        _bankHolidayRepository = bankHolidayRepository;
+        _bankHolidayService = bankHolidayService;
     }
 
-    [HttpGet]
-    public async Task<IEnumerable<BankHoliday>> GetAllBankHolidaysAsync()
+    [HttpGet("{year}")]
+    public async Task<ActionResult<IEnumerable<BankHoliday>>> GetBankHolidaysByYear(int year)
     {
-        return await _bankHolidayRepository.GetAllAsync();
+        var bankHolidays = await _bankHolidayService.GetAllByYearAsync(year);
+
+        return Ok(bankHolidays);
     }
 }
