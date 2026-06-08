@@ -1,3 +1,5 @@
+import { inject } from '@angular/core/primitives/di';
+import { BankHolidayService } from '../../../bank-holiday/services/bank-holiday-service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,4 +8,17 @@ import { Component } from '@angular/core';
   templateUrl: './bank-holiday-list.html',
   styleUrl: './bank-holiday-list.css',
 })
-export class BankHolidayList {}
+
+export class BankHolidayList {
+
+  private bankHolidayService = inject(BankHolidayService);
+
+  private getAllBankHolidays = this.bankHolidayService.getAllBankHolidays();
+
+  isLoading = this.getAllBankHolidays.isLoading;
+
+  isError = this.getAllBankHolidays.error;
+
+  value = this.getAllBankHolidays.value;
+
+}
