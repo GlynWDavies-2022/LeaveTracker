@@ -50,7 +50,6 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
         return await _dbContext.SaveChangesAsync();
     }
 
-
     public virtual void Delete(TEntity entity)
     {
         _dbSet.Remove(entity);

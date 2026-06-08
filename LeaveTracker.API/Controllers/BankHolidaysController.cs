@@ -10,11 +10,11 @@ public class BankHolidaysController : ControllerBase
 {
     private readonly IBankHolidayRepository _bankHolidayRepository;
 
-    private readonly IRepository<BankHoliday> _repository;
+    private readonly IService<BankHoliday> _bankHolidayService;
 
-    public BankHolidaysController(IRepository<BankHoliday> repository, IBankHolidayRepository bankHolidayRepository)
+    public BankHolidaysController(IService<BankHoliday> bankHolidayService, IBankHolidayRepository bankHolidayRepository)
     {
-        _repository = repository;
+        _bankHolidayService = bankHolidayService;
 
         _bankHolidayRepository = bankHolidayRepository;
     }
@@ -22,7 +22,7 @@ public class BankHolidaysController : ControllerBase
     [HttpGet]
     public async Task<IEnumerable<BankHoliday>> GetAllBankHolidaysAsync()
     {
-        return await _repository.GetAllAsync();
+        return await _bankHolidayRepository.GetAllAsync();
     }
 
     [HttpGet("{year}")]
