@@ -4,6 +4,7 @@ using LeaveTracker.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeaveTracker.Infrastructure.Migrations
 {
     [DbContext(typeof(LeaveTrackerSQLDBContext))]
-    partial class LeaveTrackerSQLDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260615193321_AddedUserEntity")]
+    partial class AddedUserEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

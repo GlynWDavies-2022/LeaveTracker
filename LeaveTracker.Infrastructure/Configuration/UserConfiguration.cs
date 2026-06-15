@@ -10,7 +10,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
     {
         builder.Property(user => user.DisplayName).HasColumnType("VARCHAR(50)").IsRequired();
         builder.Property(user => user.EmailAddress).HasColumnType("VARCHAR(50)").IsRequired();
-        builder.Property(user => user.DisplayHash).HasColumnType("VARBINARY(64)").IsRequired();
+        builder.Property(user => user.PasswordHash).HasColumnType("VARBINARY(64)").IsRequired();
         builder.Property(user => user.PasswordSalt).HasColumnType("VARBINARY(64)").IsRequired();
     }
 }

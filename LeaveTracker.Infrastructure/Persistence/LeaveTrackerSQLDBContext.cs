@@ -24,6 +24,7 @@ public class LeaveTrackerSQLDBContext(DbContextOptions options) : DbContext(opti
     public DbSet<Team> Teams { get; set; }
     public DbSet<TimeUnit> TimeUnits { get; set; }
     public DbSet<Title> Titles { get; set; }
+    public DbSet<User> Users { get; set; }
     public DbSet<WorkDay> WorkDays { get; set; }
     public DbSet<WorkPattern> WorkPatterns { get; set; }
 
