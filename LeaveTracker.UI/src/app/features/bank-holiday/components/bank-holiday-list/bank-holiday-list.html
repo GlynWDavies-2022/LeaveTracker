@@ -1,1 +1,27 @@
-<p>bank-holiday-list works!</p>
+﻿<div class="container">
+  <h1>Bank Holidays</h1>
+  <div>
+    @if(isLoading()) {
+    <p>Loading...</p>
+    } @else {
+    @if(isError()) {
+    <p>There has been an error!</p>
+    } @else {
+    <table class="table-border mt-3 table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      @for(bankholiday of value(); track bankholiday.id) {
+      <tr>
+        <td>{{bankholiday.date}}</td>
+        <td>{{bankholiday.name}}</td>
+      </tr>
+      }
+    </table>
+    }
+  }
+  </div>
+</div>
