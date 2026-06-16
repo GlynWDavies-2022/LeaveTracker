@@ -24,7 +24,7 @@ public class AccountController(LeaveTrackerSQLDBContext context, ITokenService t
 
         using var hmac = new HMACSHA512();
 
-        var passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(registerDTO.Password));
+        var passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDTO.Password));
 
         var user = UserExtensions.ToUser(registerDTO, passwordHash, hmac.Key);
 
