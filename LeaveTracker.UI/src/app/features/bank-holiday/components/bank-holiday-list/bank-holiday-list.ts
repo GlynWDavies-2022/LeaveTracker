@@ -1,4 +1,4 @@
-import { inject } from '@angular/core/primitives/di';
+import { inject } from '@angular/core';
 import { BankHolidayService } from '../../../bank-holiday/services/bank-holiday-service';
 import { Component } from '@angular/core';
 
